@@ -1,0 +1,401 @@
+.chat-queries-container {
+    display: flex;
+    height: 80vh;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+/* Sidebar List */
+.chat-sidebar {
+    width: 300px;
+    border-right: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+}
+
+/* .chat-sidebar h3 removed, handled in inline styles for header row */
+
+.chat-list {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.chat-item {
+    padding: 15px;
+    border-bottom: 1px solid #f1f1f1;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.chat-item:hover {
+    background: #f8f9fa;
+}
+
+.chat-item.active {
+    background: #e3f2fd;
+    border-left: 4px solid #2196f3;
+}
+
+.chat-item.resolved {
+    opacity: 0.7;
+}
+
+.chat-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.user-name {
+    font-weight: 700;
+    font-size: 15px;
+    color: #2c3e50;
+}
+
+.status-badge {
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 10px;
+    text-transform: uppercase;
+}
+
+.status-badge.pending {
+    background: #fff3e0;
+    color: #ef6c00;
+}
+
+.status-badge.resolved {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.status-badge.issue {
+    background: #e3f2fd;
+    color: #1976d2;
+    border: 1px solid #bbdefb;
+}
+
+.status-badge.in-progress {
+    background: #e3f2fd;
+    color: #1976d2;
+}
+
+.status-badge.closed {
+    background: #f5f5f5;
+    color: #616161;
+}
+
+.last-message {
+    font-size: 13px;
+    color: #555;
+    margin: 5px 0 0 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    line-height: 1.4;
+}
+
+.timestamp {
+    display: block;
+    font-size: 10px;
+    color: #999;
+    margin-top: 5px;
+    text-align: right;
+}
+
+/* Chat Window */
+.chat-window {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+}
+
+.no-chat-selected {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 18px;
+}
+
+.chat-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8f9fa;
+}
+
+.header-info h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.user-id {
+    font-size: 12px;
+    color: #888;
+}
+
+.resolve-btn {
+    background: #4caf50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background 0.2s;
+}
+
+.resolve-btn:hover {
+    background: #43a047;
+}
+
+.chat-history {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: #fdfdfd;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.message {
+    display: flex;
+    max-width: 70%;
+}
+
+.message.user {
+    align-self: flex-start;
+}
+
+.message.admin {
+    align-self: flex-end;
+}
+
+.message.bot {
+    align-self: flex-start;
+    opacity: 0.8;
+}
+
+.message-content {
+    padding: 10px 15px;
+    border-radius: 12px;
+    position: relative;
+}
+
+.message.user .message-content {
+    background: #f1f2f6;
+    color: #333;
+    border-bottom-left-radius: 2px;
+}
+
+.message.admin .message-content {
+    background: #2196f3;
+    color: white;
+    border-bottom-right-radius: 2px;
+}
+
+.message.bot .message-content {
+    background: #e8e8e8;
+    color: #555;
+    border-bottom-left-radius: 2px;
+    font-style: italic;
+}
+
+.message-content p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.message-content .time {
+    display: block;
+    font-size: 10px;
+    margin-top: 4px;
+    opacity: 0.7;
+    text-align: right;
+}
+
+.chat-input-area {
+    padding: 20px;
+    border-top: 1px solid #eee;
+    background: white;
+}
+
+.chat-input-area form {
+    display: flex;
+    gap: 10px;
+}
+
+.chat-input-area input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    outline: none;
+    font-size: 14px;
+}
+
+.chat-input-area input:focus {
+    border-color: #2196f3;
+}
+
+.chat-input-area button {
+    padding: 0 25px;
+    background: #2196f3;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.chat-input-area button:hover {
+    background: #1976d2;
+}
+
+/* Status Controls */
+.status-select {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    outline: none;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: white;
+}
+
+.status-select.pending {
+    border-color: #ff9800;
+    color: #ef6c00;
+    background-color: #fff3e0;
+}
+
+.status-select.in-progress {
+    border-color: #2196f3;
+    color: #1976d2;
+    background-color: #e3f2fd;
+}
+
+.status-select.resolved {
+    border-color: #4caf50;
+    color: #2e7d32;
+    background-color: #e8f5e9;
+}
+
+.status-select.closed {
+    border-color: #9e9e9e;
+    color: #616161;
+    background-color: #f5f5f5;
+}
+
+/* Formatted Ticket Message */
+.ticket-card {
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    border-left: 4px solid #1976d2;
+    margin-bottom: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.ticket-header {
+    font-weight: 700;
+    color: #1976d2;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 4px;
+}
+
+.ticket-row {
+    display: flex;
+    margin-bottom: 4px;
+    font-size: 13px;
+}
+
+.ticket-label {
+    font-weight: 600;
+    width: 90px;
+    color: #555;
+    flex-shrink: 0;
+}
+
+.ticket-value {
+    color: #333;
+    flex: 1;
+}
+
+.message-content h4 {
+    margin: 0 0 5px 0;
+    font-size: 14px;
+    color: #1565c0;
+}
+
+/* Refresh Button - Pill Shape */
+.refresh-btn {
+    background: white;
+    border: 1px solid #f0f0f0;
+    border-radius: 30px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    color: #1a202c;
+    font-weight: 600;
+    font-size: 13px;
+    font-family: inherit;
+}
+
+.refresh-btn:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+    background: #ffffff;
+}
+
+.refresh-btn:active {
+    transform: scale(0.98);
+}
+
+.refresh-btn svg {
+    color: #1a202c;
+    width: 16px;
+    height: 16px;
+}
+
+.refresh-btn.loading {
+    cursor: wait;
+    opacity: 0.8;
+}
+
+.refresh-btn.loading svg {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

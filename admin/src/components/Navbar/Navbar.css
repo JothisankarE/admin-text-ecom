@@ -1,0 +1,226 @@
+/* ========================================
+   Admin Navbar - Clean & Professional
+   ======================================== */
+
+.navbar {
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 32px;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* ========================================
+   Brand Section
+   ======================================== */
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.navbar-logo {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.navbar-logo:hover {
+    transform: scale(1.05);
+}
+
+.navbar-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1f2937;
+    letter-spacing: -0.01em;
+    position: relative;
+    padding-left: 14px;
+}
+
+.navbar-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 24px;
+    background: #e5e7eb;
+}
+
+/* ========================================
+   Profile Section
+   ======================================== */
+
+.navbar-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+}
+
+.navbar-profile:hover {
+    background: #f9fafb;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.profile-role {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #374151;
+}
+
+.profile-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid #e5e7eb;
+    object-fit: cover;
+    transition: border-color 0.2s ease;
+}
+
+.navbar-profile:hover .profile-avatar {
+    border-color: #6366f1;
+}
+
+.dropdown-icon {
+    color: #9ca3af;
+    transition: transform 0.2s ease;
+}
+
+.navbar-profile:hover .dropdown-icon {
+    color: #6b7280;
+    transform: rotate(180deg);
+}
+
+/* ========================================
+   Dropdown Menu
+   ======================================== */
+
+.profile-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: 240px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 0;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1),
+        0 2px 10px rgba(0, 0, 0, 0.05);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px) scale(0.95);
+    transform-origin: top right;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+}
+
+.navbar-profile:hover .profile-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.dropdown-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background: #f9fafb;
+}
+
+.dropdown-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #e5e7eb;
+    object-fit: cover;
+}
+
+.dropdown-user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.dropdown-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.dropdown-email {
+    font-size: 0.75rem;
+    color: #6b7280;
+}
+
+.dropdown-divider {
+    height: 1px;
+    background: #e5e7eb;
+}
+
+.logout-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 14px 16px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #6b7280;
+    transition: all 0.2s ease;
+}
+
+.logout-btn:hover {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+.logout-btn svg {
+    transition: transform 0.2s ease;
+}
+
+.logout-btn:hover svg {
+    transform: translateX(2px);
+}
+
+/* ========================================
+   Responsive
+   ======================================== */
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 16px;
+    }
+
+    .navbar-title {
+        display: none;
+    }
+
+    .profile-info {
+        display: none;
+    }
+}

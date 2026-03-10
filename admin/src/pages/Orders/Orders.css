@@ -1,0 +1,262 @@
+.order {
+    width: 100%;
+    animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.order h3 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 32px;
+    border-bottom: 2.5px solid var(--border-solid);
+    padding-bottom: 12px;
+}
+
+.order-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.order-item {
+    background: #ffffff;
+    border: 1px solid var(--border-solid);
+    border-radius: 20px;
+    padding: 24px;
+    display: grid;
+    grid-template-columns: 0.8fr 3fr 1fr 1.5fr;
+    align-items: flex-start;
+    /* Align to top */
+    gap: 24px;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.order-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary);
+}
+
+.order-item-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.order-item-header img {
+    width: 60px;
+    padding: 14px;
+    background: #f1f5f9;
+    border-radius: 16px;
+    border: 1px solid var(--border-solid);
+}
+
+.order-role {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.order-item-body {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.order-item-food {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--text-main);
+}
+
+.order-item-name {
+    font-weight: 800;
+    color: var(--primary);
+    font-size: 1rem;
+}
+
+.order-item-address {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.order-item-phone {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+/* Footer Section */
+.order-item-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.order-actions-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.order-price {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #059669;
+}
+
+.order-status-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+}
+
+.status-label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-left: 4px;
+}
+
+.order-status-select {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+    appearance: none;
+    outline: none;
+}
+
+/* Base Styles & Dynamic Colors */
+.order-status-select.food-processing {
+    background-color: #fff7ed;
+    border: 2px solid #ffedd5;
+    color: #c2410c;
+}
+
+.order-status-select.out-for-delivery {
+    background-color: #eff6ff;
+    border: 2px solid #dbeafe;
+    color: #1d4ed8;
+}
+
+.order-status-select.delivered {
+    background-color: #f0fdf4;
+    border: 2px solid #dcfce7;
+    color: #15803d;
+}
+
+.order-status-select.cancelled,
+.order-status-select[class*="cancelled-"] {
+    background-color: #fef2f2;
+    border: 2px solid #fee2e2;
+    color: #b91c1c;
+}
+
+.order-status-select:hover {
+    filter: brightness(0.97);
+    transform: translateY(-1px);
+}
+
+.order-status-select:focus {
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05);
+}
+
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ── Delete Button ── */
+.order-delete-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border: 2px solid transparent;
+    cursor: not-allowed;
+    transition: all 0.25s ease;
+    letter-spacing: 0.3px;
+}
+
+.order-delete-btn svg {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+}
+
+/* Disabled (non-Delivered) — muted gray */
+.order-delete-btn.disabled {
+    background: #f1f5f9;
+    color: #b0bac4;
+    border-color: #e2e8f0;
+    opacity: 0.7;
+}
+
+/* Enabled (Delivered) — vibrant red */
+.order-delete-btn.enabled {
+    background: #fef2f2;
+    color: #dc2626;
+    border-color: #fecaca;
+    cursor: pointer;
+}
+
+.order-delete-btn.enabled:hover {
+    background: #dc2626;
+    color: #ffffff;
+    border-color: #dc2626;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(220, 38, 38, 0.35);
+}
+
+.order-delete-btn.enabled:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* Mini spinner inside the button */
+.delete-spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #fecaca;
+    border-top-color: #dc2626;
+    border-radius: 50%;
+    animation: deleteSpin 0.7s linear infinite;
+}
+
+@keyframes deleteSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
