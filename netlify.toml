@@ -12,5 +12,4 @@
   publish = "admin/dist"
   port = 5173
 
-[context.production.environment]
-  NODE_ENV = "production"
+
