@@ -3,6 +3,9 @@
   command = "npm install && npm run build"
   publish = "dist"
 
+[build.environment]
+  VITE_BACKEND_URL = "https://textuser-ecom.onrender.com"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
