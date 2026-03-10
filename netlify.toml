@@ -2,6 +2,11 @@
   command = "npm --prefix admin run build"
   publish = "admin/dist"
 
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
 [context.production.environment]
 # Optional: ensure NODE_ENV is production during build
   NODE_ENV = "production"
