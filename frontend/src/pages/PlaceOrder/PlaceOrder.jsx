@@ -269,9 +269,8 @@ const PlaceOrder = () => {
     });
 
     const orderData = {
-      userId: 'USER_ID', // Replace with the actual user ID
       items: orderItems,
-      amount: getTotalCartAmount() + 5, // Include delivery fee
+      amount: getTotalCartAmount() + 50, // Include delivery fee (Sync with backend)
       address: data, // The address data collected from the form
       paymentMethod: method,
       upiId: method === 'upi' ? data.upiId : '', // Include UPI ID if UPI payment
@@ -410,12 +409,12 @@ const PlaceOrder = () => {
                 <hr />
                 <div className='cart-total-details'>
                   <p>Delivery Fee</p>
-                  <p>₹{getTotalCartAmount() === 0 ? 0 : 5}</p>
+                  <p>₹{getTotalCartAmount() === 0 ? 0 : 50}</p>
                 </div>
                 <hr />
                 <div className='cart-total-details'>
                   <b>Total</b>
-                  <b>₹{getTotalCartAmount() + 5}</b>
+                  <b>₹{getTotalCartAmount() + 50}</b>
                 </div>
               </div>
             </div>

@@ -131,7 +131,7 @@ const placeOrder = async (req, res) => {
           product_data: {
             name: 'Delivery Charge',
           },
-          unit_amount: 5,
+          unit_amount: 50 * 100, // INR 50.00 - Stripe has a minimum amount (~₹40)
         },
         quantity: 1,
       });
@@ -151,8 +151,13 @@ const placeOrder = async (req, res) => {
       res.json({ success: true, session_url: session.url });
     }
   } catch (error) {
-    console.log(error);
-    res.json({ success: false, message: 'Error' });
+    console.error("❌ Order placement error:", {
+      message: error.message,
+      stack: error.stack,
+      paymentMethod: req.body.paymentMethod,
+      amount: req.body.amount
+    });
+    res.json({ success: false, message: error.message || 'Error' });
   }
 };
 

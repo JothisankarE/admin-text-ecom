@@ -198,12 +198,12 @@ const Cart = () => {
             <hr />
             <div className="cart-total-details">
               <p>Delivery Fee</p>
-              <p>₹{getTotalCartAmount() === 0 ? 0 : 5}</p>
+              <p>₹{getTotalCartAmount() === 0 ? 0 : 50}</p>
             </div>
             <hr />
             <div className="cart-total-details">
               <b>Total</b>
-              <b>₹{getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 5}</b>
+              <b>₹{getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 50}</b>
             </div>
           </div>
           <button onClick={() => navigate('/order')} className="cart-checkout-btn">PROCEED TO CHECKOUT</button>
