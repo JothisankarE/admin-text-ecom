@@ -17,7 +17,7 @@ services:
       - key: NODE_ENV
         value: production
       - key: FRONTEND_URL
-        value: https://mat-textile-hub.vercel.app/
+        value: https://mat-textile-hub.vercel.app
       - key: SMTP_USER
         sync: false
       - key: SMTP_PASS
