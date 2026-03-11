@@ -1,11 +1,10 @@
 services:
   - type: web
-    name: textuser-ecom
+    name: mat-textile-hub-admin
     env: node
     plan: free
-    rootDir: backend
-    buildCommand: npm install
-    startCommand: npm start
+    buildCommand: npm run build:admin && cd backend && npm install
+    startCommand: cd backend && npm start
     envVars:
       - key: MONGODB_URI
         sync: false
@@ -17,6 +16,8 @@ services:
         sync: false
       - key: NODE_ENV
         value: production
+      - key: FRONTEND_URL
+        value: https://mat-textile-hub-admin.onrender.com
       - key: SMTP_USER
         sync: false
       - key: SMTP_PASS

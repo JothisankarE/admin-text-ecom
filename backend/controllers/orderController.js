@@ -42,8 +42,8 @@ const { sendOrderConfirmationEmail } = require('../utlis/sendEmail');
 
 
 //           const session = await stripe.checkout.sessions.create({
-//             success_url: `http://localhost:5173/verify?success=true&orderId=${newOrder._id}`,
-//             cancel_url: `http://localhost:5173/verify?success=false&orderId=${newOrder._id}`,
+//             success_url: `${process.env.FRONTEND_URL || 'http://localhost:5173'}/verify?success=true&orderId=${newOrder._id}`,
+//             cancel_url: `${process.env.FRONTEND_URL || 'http://localhost:5173'}/verify?success=false&orderId=${newOrder._id}`,
 //             line_items: line_items,
 //             mode: 'payment',
 //           });
@@ -138,8 +138,8 @@ const placeOrder = async (req, res) => {
 
       // Create the Stripe Checkout session
       const session = await stripe.checkout.sessions.create({
-        success_url: `http://localhost:5173/verify?success=true&orderId=${newOrder._id}`,
-        cancel_url: `http://localhost:5173/verify?success=false&orderId=${newOrder._id}`,
+        success_url: `${process.env.FRONTEND_URL || 'http://localhost:5173'}/verify?success=true&orderId=${newOrder._id}`,
+        cancel_url: `${process.env.FRONTEND_URL || 'http://localhost:5173'}/verify?success=false&orderId=${newOrder._id}`,
         line_items: line_items,
         mode: 'payment',
         customer_email: req.body.address.email,

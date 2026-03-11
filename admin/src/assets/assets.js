@@ -19,4 +19,4 @@ export const assets = {
     parcel_icon
 }
 
-export const url = import.meta.env.VITE_BACKEND_URL || 'https://textuser-ecom.onrender.com'
+export const url = import.meta.env.VITE_BACKEND_URL || 'https://mat-textile-hub-admin.onrender.com'

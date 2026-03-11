@@ -182,7 +182,7 @@ app.get("/", (req, res) => {
       <div class="status-badge"><span class="status-dot"></span> API Online</div>
       <h1>MAT Traders API</h1>
       <p class="subtitle">E-Commerce Backend Service — All Systems Operational</p>
-      <div class="base-url">API: https://textuser-ecom.onrender.com</div>
+      <div class="base-url">API: https://mat-textile-hub-admin.onrender.com</div>
       <a href="https://mat-textile-hub-admin.onrender.com/" class="admin-url" target="_blank">Admin Panel: https://mat-textile-hub-admin.onrender.com/</a>
     </div>
 
