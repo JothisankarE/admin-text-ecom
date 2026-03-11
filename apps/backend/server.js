@@ -37,15 +37,6 @@ app.use("/api/cart", cartRouter)
 app.use("/api/order", orderRouter)
 app.use("/api/chat", chatRouter)
 
-const adminDistPath = path.join(__dirname, 'admin-dist');
-const fs = require('fs');
-
-console.log('Admin Dist Path:', adminDistPath);
-console.log('Index.html exists:', fs.existsSync(path.join(adminDistPath, 'index.html')));
-
-// Serve static files from the admin panel dist folder
-app.use(express.static(adminDistPath));
-
 app.get("/api-docs", (req, res) => {
   res.send(`
 <!DOCTYPE html>
@@ -289,16 +280,6 @@ app.get("/api-docs", (req, res) => {
 </body>
 </html>
   `);
-});
-
-// Catch-all route to serve the admin panel's index.html
-app.get('*', (req, res) => {
-  res.sendFile(path.join(adminDistPath, 'index.html'), (err) => {
-    if (err) {
-      console.error('Error sending index.html:', err);
-      res.status(404).send('Admin Panel Not Found. Please ensure the build process completed successfully.');
-    }
-  });
 });
 
 app.listen(port, () => console.log(`Server started on port ${port}`))
