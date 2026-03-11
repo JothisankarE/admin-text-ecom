@@ -2,9 +2,9 @@ const mongoose = require('mongoose');
 
 const connectDB = async () => {
     try {
-        const uri = process.env.MONGODB_URI;
+        const uri = process.env.MONGODB_URI || process.env.MONGODB_URT;
         if (!uri) {
-            console.error("❌ MONGODB_URI is missing in environment variables!");
+            console.error("❌ MONGODB_URI/URT is missing in environment variables!");
             return;
         }
         
