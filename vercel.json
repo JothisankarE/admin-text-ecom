@@ -9,6 +9,11 @@
     { "source": "/images/(.*)", "destination": "/api/index.js" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
+  "functions": {
+    "api/index.js": {
+      "includeFiles": "backend/**"
+    }
+  },
   "headers": [
     {
       "source": "/(.*)",
